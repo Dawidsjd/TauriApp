@@ -3,8 +3,8 @@ function App() {
 
   return (
     <>
-      <h1>siema szlybki eloelo</h1>
-      <p>kaktus</p>
+      <h1>siema szlyb</h1>
+      
     </>
   )
 }
