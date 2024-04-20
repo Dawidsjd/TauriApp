@@ -1,10 +1,9 @@
 
 function App() {
-  
 
   return (
     <>
-      <h1>siema szlyb</h1>
+      <h1>siema szlybki eloelo</h1>
     </>
   )
 }
