@@ -1,39 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { createChart, PriceLineOptions, LineSeriesData } from 'lightweight-charts';
+import React, { useEffect } from 'react';
+import { createChart, PriceLineOptions, Time, LineSeriesData } from 'lightweight-charts';
 
 const BitcoinChart: React.FC = () => {
-  const [bitcoinData, setBitcoinData] = useState<LineSeriesData[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // Pobierz dane z API Bitcoin
-        const response = await fetch('https://api.coindesk.com/v1/bpi/historical/close.json');
-        const data = await response.json();
-        
-        // Przetwórz dane na format odpowiedni dla wykresu
-        const processedData: LineSeriesData[] = Object.keys(data.bpi).map((date) => ({
-          time: new Date(date).getTime() / 1000,
-          value: data.bpi[date],
-        }));
-        
-        // Ustaw dane w stanie komponentu
-        setBitcoinData(processedData);
-      } catch (error) {
-        console.error('Wystąpił błąd podczas pobierania danych:', error);
-      }
-    };
-
-    // Pobierz dane na początku
-    fetchData();
-
-    // Ustaw interwał odświeżania danych co np. 60 sekund
-    const intervalId = setInterval(fetchData, 60000);
-
-    // Clean up
-    return () => clearInterval(intervalId);
-  }, []);
-
   useEffect(() => {
     const chartOptions = {
       layout: {
@@ -54,11 +22,24 @@ const BitcoinChart: React.FC = () => {
       priceLineVisible: false,
     });
 
-    series.setData(bitcoinData);
+    const data: LineSeriesData[] = [
+      { time: { year: 2018, month: 1, day: 1 } as Time, value: 27.58405298746434 },
+    ];
+    series.setData(data);
 
-    // Dodaj linie cenowe
-    const minimumPrice = Math.min(...bitcoinData.map(data => data.value));
-    const maximumPrice = Math.max(...bitcoinData.map(data => data.value));
+    let minimumPrice = data[0].value;
+    let maximumPrice = minimumPrice;
+
+    for (let i = 1; i < data.length; i++) {
+      const price = data[i].value;
+      if (price > maximumPrice) {
+        maximumPrice = price;
+      }
+      if (price < minimumPrice) {
+        minimumPrice = price;
+      }
+    }
+
     const avgPrice = (maximumPrice + minimumPrice) / 2;
 
     const lineWidth = 2;
@@ -100,7 +81,7 @@ const BitcoinChart: React.FC = () => {
     return () => {
       chart.remove();
     };
-  }, [bitcoinData]);
+  }, []);
 
   return <div id="container" style={{ width: '100%', height: '500px' }}></div>;
 };
