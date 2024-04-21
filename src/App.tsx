@@ -1,12 +1,13 @@
+import React from 'react';
+import BitcoinChart from './components/BitcoinChart';
 
-function App() {
-
+const App: React.FC = () => {
   return (
-    <>
-      <h1>siema szlyb</h1>
-      
-    </>
-  )
-}
+    <div className="App">
+      <h1>Bitcoin Price Chart</h1>
+      <BitcoinChart />
+    </div>
+  );
+};
 
-export default App
+export default App;
