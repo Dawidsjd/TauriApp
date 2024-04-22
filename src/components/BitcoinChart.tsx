@@ -37,8 +37,11 @@ const BitcoinChart: React.FC = () => {
   useEffect(() => {
     const chartOptions = {
       layout: {
-        textColor: 'black',
-        background: { type: 'solid', color: 'white' },
+        textColor: '#F3EF52',
+        background: { 
+          type: 'solid',
+          color: 'rgba(0, 0, 0, 0)' // Przezroczyste tło
+        },
       },
     };
 
@@ -48,9 +51,9 @@ const BitcoinChart: React.FC = () => {
     const chart = createChart(container, chartOptions);
 
     const series = chart.addAreaSeries({
-      lineColor: 'blue',
-      topColor: 'rgba(41, 98, 255, 0.4)', // Niebieski kolor: rgba(41, 98, 255, 0.4)
-      bottomColor: 'rgba(41, 98, 255, 0)',
+      lineColor: '#F3EF52',
+      topColor: 'rgba(243, 239, 82, 0.4)', // Niebieski kolor: rgba(41, 98, 255, 0.4)
+      bottomColor: 'rgba(243, 239, 82, 0)',
       lineWidth: 2,
     });
 
