@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { createChart, PriceLineOptions, LineSeriesData } from 'lightweight-charts';
+import { createChart, PriceLineOptions, AreaSeriesData } from 'lightweight-charts';
 
 const BitcoinChart: React.FC = () => {
-  const [bitcoinData, setBitcoinData] = useState<LineSeriesData[]>([]);
+  const [bitcoinData, setBitcoinData] = useState<AreaSeriesData[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -12,7 +12,7 @@ const BitcoinChart: React.FC = () => {
         const data = await response.json();
         
         // Przetwórz dane na format odpowiedni dla wykresu
-        const processedData: LineSeriesData[] = Object.keys(data.bpi).map((date) => ({
+        const processedData: AreaSeriesData[] = Object.keys(data.bpi).map((date) => ({
           time: new Date(date).getTime() / 1000,
           value: data.bpi[date],
         }));
@@ -47,11 +47,11 @@ const BitcoinChart: React.FC = () => {
 
     const chart = createChart(container, chartOptions);
 
-    const series = chart.addLineSeries({
-      color: '#2962FF',
+    const series = chart.addAreaSeries({
+      lineColor: 'blue',
+      topColor: 'rgba(41, 98, 255, 0.4)', // Niebieski kolor: rgba(41, 98, 255, 0.4)
+      bottomColor: 'rgba(41, 98, 255, 0)',
       lineWidth: 2,
-      lastValueVisible: false,
-      priceLineVisible: false,
     });
 
     series.setData(bitcoinData);
