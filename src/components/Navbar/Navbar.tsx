@@ -22,14 +22,14 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between items-center ">
-      {/* Element 1: Logo po lewej stronie */}
-      <img src={Logo} alt="Logo" className="logo" draggable="false" />
+      
+      <img src={Logo} alt="Logo" className="logo absolute top-1" draggable="false" />
 
-      {/* Element 2: FloatingNav na środku */}
+      
       <FloatingNav navItems={navItems} className="top-4 z-50" />
 
-      {/* Element 3: Ikona User po prawej stronie */}
-      <IconUser className="text-neutral-500 dark:text-white absolute right-8 top-9" />
+      
+      <IconUser className="text-neutral-500 dark:text-white absolute right-8 top-8" />
     </div>
   );
 };
