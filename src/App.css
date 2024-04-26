@@ -6,7 +6,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* Tutaj możesz dodawać niestandardowe style */
+
 .gradient_container{
     background: rgb(39,41,47);
     background: linear-gradient(23deg, rgba(39,41,47,1) 0%, rgba(84,86,92,1) 100%);
@@ -18,8 +18,8 @@ body{
 }
 
 .logo {
-    width: 100px; /* Ustaw dowolną szerokość */
+    width: 100px; 
     height: auto;
-     /* Automatycznie dostosuj wysokość */
+    
   }
   

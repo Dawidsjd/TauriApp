@@ -1,4 +1,5 @@
 import React from 'react';
+import { TailwindcssButtons } from '../../assets/buttons/TailwindcssButtons';
 
 const TradePanel: React.FC = () => {
   const handleButtonClick = (amount: number) => {
@@ -43,9 +44,8 @@ const TradePanel: React.FC = () => {
           <button className="bg-gray-200 text-gray-800 px-2 py-1 rounded-full text-xs hover:bg-gray-400">$1000</button>
           <button className="bg-gray-200 text-gray-800 px-2 py-1 rounded-full text-xs hover:bg-gray-400">$2000</button>
         </div>
-        <button className="bg-black text-white px-4 py-4 rounded-full hover:bg-gray-900 mt-6" style={{marginTop: '30%'}}> {/* Dodanie marginesu od góry */}
-          Continue
-        </button>
+      
+        <TailwindcssButtons />
       </div>
     </div>
   );
