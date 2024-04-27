@@ -1,5 +1,7 @@
 import React from 'react';
 import { TailwindcssButtons } from '../../assets/buttons/TailwindcssButtons';
+import { IconArrowDown } from '@tabler/icons-react';
+
 
 const TradePanel: React.FC = () => {
   const handleButtonClick = (amount: number) => {
@@ -11,13 +13,19 @@ const TradePanel: React.FC = () => {
     <div className="relative bg-yellow-300 text-gray-800 p-4 rounded-md w-1/3 " style={{ height: '80vh' }}> {/* Ustawienie wysokości na 70% wysokości widoku przeglądarki */}
       <h2 className="text-lg font-semibold mb-2">Make a Trade</h2>
       <div className="flex flex-col space-y-2">
-        <div className="flex justify-between items-center">
-          <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-6"> {/* Dodanie marginesu od góry */}
-            Buy
-          </button>
-          <button className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 mt-6"> {/* Dodanie marginesu od góry */}
-            Sell
-          </button>
+        <div className="flex w-full">
+        <button className="text-black px-18 rounded-full mt-6 transition-colors bg-yellow-300 z-10 flex items-center border border-black" style={{ width: '250px', position: 'relative', left: '20px' }}>
+  <div className='flex justify-center items-center rounded-full mr-6 bg-black w-1/3 h-12 border-3 border-black'>
+    <IconArrowDown className='text-white'/>
+  </div>
+  <span>BUY</span>
+</button>
+
+
+
+        <button className=" text-black px-18 py-3 rounded-full mt-6 transition-colors" style={{ width: '250px',position:'relative', right: '20px', border: '1px solid #d0cf53' }}>
+          SELL
+        </button>
         </div>
         <div className='pt-6'>
           <span>Amount</span>
@@ -38,12 +46,14 @@ const TradePanel: React.FC = () => {
           />
         </div>
         <div className="flex items-center space-x-2">
-          <button className="bg-gray-200 text-gray-800 px-2 py-1 rounded-full text-xs hover:bg-gray-400">$50</button>
-          <button className="bg-gray-200 text-gray-800 px-2 py-1 rounded-full text-xs hover:bg-gray-400">$100</button>
-          <button className="bg-gray-200 text-gray-800 px-2 py-1 rounded-full text-xs hover:bg-gray-400">$500</button>
-          <button className="bg-gray-200 text-gray-800 px-2 py-1 rounded-full text-xs hover:bg-gray-400">$1000</button>
-          <button className="bg-gray-200 text-gray-800 px-2 py-1 rounded-full text-xs hover:bg-gray-400">$2000</button>
-        </div>
+  <button className="border border-black text-gray-800 px-2 py-1 rounded-full text-xs hover:bg-gray-900 hover:text-white">$50</button>
+  <button className="border border-black text-gray-800 px-2 py-1 rounded-full text-xs hover:bg-gray-900 hover:text-white">$100</button>
+  <button className="border border-black text-gray-800 px-2 py-1 rounded-full text-xs hover:bg-gray-900 hover:text-white">$500</button>
+  <button className="border border-black text-gray-800 px-2 py-1 rounded-full text-xs hover:bg-gray-900 hover:text-white">$1000</button>
+  <button className="border border-black text-gray-800 px-2 py-1 rounded-full text-xs hover:bg-gray-900 hover:text-white">$2000</button>
+</div>
+
+
       
         <TailwindcssButtons />
       </div>
