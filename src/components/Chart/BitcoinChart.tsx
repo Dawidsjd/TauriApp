@@ -28,7 +28,7 @@ const BitcoinChart: React.FC = () => {
     fetchData();
 
     // Ustaw interwał odświeżania danych co np. 60 sekund
-    const intervalId = setInterval(fetchData, 60000);
+    const intervalId = setInterval(fetchData, 600);
 
     // Clean up
     return () => clearInterval(intervalId);
@@ -105,7 +105,7 @@ const BitcoinChart: React.FC = () => {
     };
   }, [bitcoinData]);
 
-  return <div id="container" style={{ width: '100%', height: '100%' }}></div>;
+  return <div id="container" style={{ width: '650px', height: '400px' }}></div>;
 };
 
 export default BitcoinChart;

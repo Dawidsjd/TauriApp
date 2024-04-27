@@ -2,6 +2,7 @@ import React from 'react';
 import { TailwindcssButtons } from '../../assets/buttons/TailwindcssButtons';
 import { IconArrowDown } from '@tabler/icons-react';
 import TradeInput from '../../assets/inputs/TradeInput';
+import '../../App.css'
 
 
 const TradePanel: React.FC = () => {
@@ -11,7 +12,7 @@ const TradePanel: React.FC = () => {
   };
 
   return (
-    <div className="relative bg-yellow-300 text-gray-800 p-4 rounded-md w-1/3 " style={{ height: '80vh' }}> 
+    <div className="relative bg-yellow-300 text-gray-800 p-4 rounded-2xl w-1/3 scalable" style={{ height: '80vh' }}> 
       <h2 className="text-lg font-semibold mb-2">Make a Trade</h2>
       <div className="flex flex-col space-y-2">
         <div className="flex w-full">

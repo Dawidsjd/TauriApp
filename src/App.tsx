@@ -10,13 +10,15 @@ const App: React.FC = () => {
       
       <Navbar/>
 
-      <div className="relative wrapper flex mt-32">
+      <div className="relative flex items-center justify-center mt-32 ml-4">
 
+        {/* Item 1 */}
         <div className='gradient_container'>
-        <BitcoinChart />
-      </div>
+          <BitcoinChart />
+        </div>
 
-      <TradePanel />
+        {/* Item 2 */}
+        <TradePanel />
 
       </div>
       
