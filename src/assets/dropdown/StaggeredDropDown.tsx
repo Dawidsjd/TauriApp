@@ -1,9 +1,8 @@
 import {
-    FiEdit,
-    FiChevronDown,
-    FiTrash,
-    FiShare,
-    FiPlusSquare,
+    FiDollarSign,
+    FiLogOut,
+    FiUser,
+    FiSettings
   } from "react-icons/fi";
   import { motion } from "framer-motion";
   import { IconUser, IconUserFilled } from '@tabler/icons-react';
@@ -30,10 +29,10 @@ import {
             style={{ originY: "top", translateX: "-90%",background: '#0f1012' }}
             className="flex flex-col gap-2 p-2 rounded-lg  shadow-xl absolute top-[120%] left-[50%] w-48 overflow-hidden"
           >
-            <Option setOpen={setOpen} Icon={FiEdit} text="Edit" />
-            <Option setOpen={setOpen} Icon={FiPlusSquare} text="Duplicate" />
-            <Option setOpen={setOpen} Icon={FiShare} text="Share" />
-            <Option setOpen={setOpen} Icon={FiTrash} text="Remove" />
+            <Option setOpen={setOpen} Icon={FiUser} text="My Profile" colorText="#e3dcdc" />
+            <Option setOpen={setOpen} Icon={FiSettings} text="Settings" colorText="#e3dcdc" />
+            <Option setOpen={setOpen} Icon={FiDollarSign} text="Assets" colorText="#e3dcdc" />
+            <Option setOpen={setOpen} Icon={FiLogOut} text="Log Out" colorText="#e30e2e" />
           </motion.ul>
         </motion.div>
       </div>
@@ -44,8 +43,10 @@ import {
     text,
     Icon,
     setOpen,
+    colorText,
   }: {
     text: string;
+    colorText: string;
     Icon: IconType;
     setOpen: Dispatch<SetStateAction<boolean>>;
   }) => {
@@ -53,7 +54,8 @@ import {
       <motion.li
         variants={itemVariants}
         onClick={() => setOpen(false)}
-        className="flex items-center gap-2 w-full p-2 text-xs font-medium whitespace-nowrap rounded-md hover:bg-gray-800 text-slate-400 hover:text-yellow-300 transition-colors cursor-pointer"
+        style={{color: colorText}}
+        className="flex items-center gap-2 w-full p-2 text-xs font-medium whitespace-nowrap rounded-md hover:bg-gray-800 hover:text-yellow-300 transition-colors cursor-pointer"
       >
         <motion.span variants={actionIconVariants}>
           <Icon />
@@ -62,6 +64,8 @@ import {
       </motion.li>
     );
   };
+
+  
   
   export default StaggeredDropDown;
   
