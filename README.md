@@ -33,7 +33,7 @@ To get started with TauriApp, follow these steps:
 
 3. **Run the application**:
     ```bash
-    npm run tauri dev
+    npx tauri dev
     ```
 
 ## Screenshots
@@ -47,7 +47,7 @@ Here are some common commands to work with TauriApp:
 
 - **Start development server**:
     ```bash
-    npm run tauri dev
+    npx tauri dev
     ```
 
 - **Build for production**:
