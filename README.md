@@ -1,30 +1,81 @@
-# React + TypeScript + Vite
+# TauriApp
+React + Typescript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
+<img src="https://github.com/Dawidsjd/TauriApp/assets/53567837/113d0245-401c-4608-9735-a1449cdf5cd4" alt="TauriApp Logo" width="400">
+</div>
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+TauriApp is a lightweight and secure application built with Tauri. It combines the power of web technologies with the performance and security of native applications. Whether you're developing a small tool or a complex system, TauriApp is designed to help you create fast and secure applications with ease.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Lightweight**: Minimal application size and low memory footprint.
+- **Secure**: Enhanced security features to protect your data.
+- **Cross-Platform**: Runs on Windows, macOS, and Linux.
+- **Easy to Use**: Simple setup and intuitive API.
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+To get started with TauriApp, follow these steps:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/Dawidsjd/TauriApp.git
+    cd TauriApp
+    ```
+
+2. **Install dependencies**:
+    ```bash
+    npm install
+    ```
+
+3. **Run the application**:
+    ```bash
+    npm run tauri dev
+    ```
+
+## Screenshots
+
+![tauri](https://github.com/Dawidsjd/TauriApp/assets/53567837/ae27f590-20a7-4bab-9435-0f30fefd5297)
+
+
+## Usage
+
+Here are some common commands to work with TauriApp:
+
+- **Start development server**:
+    ```bash
+    npm run tauri dev
+    ```
+
+- **Build for production**:
+    ```bash
+    npm run tauri build
+    ```
+
+- **Run tests**:
+    ```bash
+    npm test
+    ```
+
+## Contributing
+
+Contributions are welcome! Please follow these steps to contribute:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes and commit them (`git commit -am 'Add some feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Create a new Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+If you have any questions or suggestions, feel free to open an issue or contact the project maintainers:
+
+- **Dawid Sjd** - [GitHub](https://github.com/Dawidsjd)
